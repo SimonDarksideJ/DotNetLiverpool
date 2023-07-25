@@ -1,0 +1,16 @@
+name: your-first-workflow
+run-name: ${{ github.actor }} is learning automation
+on: [push]
+jobs:
+  my-first-workflow:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+      - id: run-script
+        name: 'This is what my step is called'
+        run: |
+            echo 'My first ever script has been run'
+        shell: pwsh
